@@ -28,6 +28,12 @@ switch (comando) {
         let actualizado = porHacer.actualizar(argv.descripcion, argv.completado);
         console.log(actualizado);
         break;
+    case 'borrar':
+        console.log('Borrando las tareas');
+
+        let borrado = porHacer.borrar(argv.descripcion);
+        console.log(borrado);
+        break;
     default:
         console.log('Comando no válido');
 

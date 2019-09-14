@@ -20,6 +20,14 @@ const argv = require('yargs')
         }
 
     })
+    .command('borrar', 'Borra una tarea de la bd', {
+        descripcion: {
+            demand: true,
+            alias: 'd',
+            desc: 'Descripción de la tarea'
+
+        },
+    })
     .help()
     .argv;
 
