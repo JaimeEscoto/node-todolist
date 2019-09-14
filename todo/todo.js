@@ -38,8 +38,23 @@ const getListado = () => {
     return listadoPorHacer;
 
 }
+const actualizar = (descripcion, completado = true) => {
+    cargarDB();
+    let index = listadoPorHacer.findIndex(tarea => {
+        return tarea.descripcion === descripcion;
+    })
+    if (index >= 0) {
+        listadoPorHacer[index].completado = completado;
+        guardarDB();
+        return true;
+    }
+    return false;
+
+
+}
 
 module.exports = {
     crear: crear,
-    getListado: getListado
+    getListado: getListado,
+    actualizar: actualizar
 };
